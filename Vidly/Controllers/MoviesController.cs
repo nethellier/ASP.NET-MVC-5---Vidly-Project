@@ -5,18 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 
-namespace Vidly.Controllers
-{
-    public class MoviesController : Controller
-    {
+namespace Vidly.Controllers {
+    public class MoviesController : Controller {
         // GET: Movies/Random
         public ActionResult Random() //was Index
         {
-            var movie = new Movie()
-            {
-                Name = "Shrek!"
-            };
+            var movie = new Movie() { Name = "Shrek!" };
             return View(movie);
         }
+
+        public ActionResult ByReleaseDate(int year, byte month)
+        {
+            return Content(year + "/" + month);
+        }
+        
     }
 }
